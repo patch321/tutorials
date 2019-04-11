@@ -1,14 +1,13 @@
-import React, { Props } from 'react';
+import React from 'react';
 
-class SearchBar extends React.Component<{ onSubmit: any }> {
+class SearchBar extends React.Component {
 	state = { term: '' };
 
-	onInputChange = (e: any) => {
-		console.log(e.target.value);
+	onInputChange = e => {
 		this.setState({ term: e.target.value });
 	};
 
-	onInputSubmit = (event: any) => {
+	onInputSubmit = event => {
 		event.preventDefault();
 		this.props.onSubmit(this.state.term);
 	};
